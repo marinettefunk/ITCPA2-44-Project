@@ -1,0 +1,15 @@
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\LibraryBookBorrowingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\LibraryBookBorrowingSystem.AssemblyInfoInputs.cache
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\LibraryBookBorrowingSystem.AssemblyInfo.cs
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\LibraryBookBorrowingSystem.csproj.CoreCompileInputs.cache
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\LibraryBookBorrowingSystem.sourcelink.json
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\bin\Debug\net9.0\LibraryBookBorrowingSystem.exe
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\bin\Debug\net9.0\LibraryBookBorrowingSystem.deps.json
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\bin\Debug\net9.0\LibraryBookBorrowingSystem.runtimeconfig.json
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\bin\Debug\net9.0\LibraryBookBorrowingSystem.dll
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\bin\Debug\net9.0\LibraryBookBorrowingSystem.pdb
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\LibraryBookBorrowingSystem.dll
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\refint\LibraryBookBorrowingSystem.dll
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\LibraryBookBorrowingSystem.pdb
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\LibraryBookBorrowingSystem.genruntimeconfig.cache
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 1\LibraryBookBorrowingSystem\obj\Debug\net9.0\ref\LibraryBookBorrowingSystem.dll

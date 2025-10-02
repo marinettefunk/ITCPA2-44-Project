@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\Code\\Question 1\\LibraryBookBorrowingSystem\\LibraryBookBorrowingSystem.csproj",
+      "projectUniqueName": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 1\\LibraryBookBorrowingSystem\\LibraryBookBorrowingSystem.csproj",
       "projectName": "LibraryBookBorrowingSystem",
-      "projectPath": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\Code\\Question 1\\LibraryBookBorrowingSystem\\LibraryBookBorrowingSystem.csproj",
+      "projectPath": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 1\\LibraryBookBorrowingSystem\\LibraryBookBorrowingSystem.csproj",
       "packagesPath": "C:\\Users\\marin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\Code\\Question 1\\LibraryBookBorrowingSystem\\obj\\",
+      "outputPath": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 1\\LibraryBookBorrowingSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marin\\AppData\\Roaming\\NuGet\\NuGet.Config"
