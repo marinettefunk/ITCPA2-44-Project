@@ -1,0 +1,15 @@
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\bin\Debug\net9.0\AttendeeManagementSystems.exe
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\bin\Debug\net9.0\AttendeeManagementSystems.deps.json
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\bin\Debug\net9.0\AttendeeManagementSystems.runtimeconfig.json
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\bin\Debug\net9.0\AttendeeManagementSystems.dll
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\bin\Debug\net9.0\AttendeeManagementSystems.pdb
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\AttendeeManagementSystems.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\AttendeeManagementSystems.AssemblyInfoInputs.cache
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\AttendeeManagementSystems.AssemblyInfo.cs
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\AttendeeManagementSystems.csproj.CoreCompileInputs.cache
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\AttendeeManagementSystems.sourcelink.json
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\AttendeeManagementSystems.dll
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\refint\AttendeeManagementSystems.dll
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\AttendeeManagementSystems.pdb
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\AttendeeManagementSystems.genruntimeconfig.cache
+C:\Users\marin\OneDrive - Eduvos\Year 2\Block 4\Object-Oriented Programming in C#\Project\ITCPA2-44-Project\Code\Question 2\AttendeeManagementSystems\obj\Debug\net9.0\ref\AttendeeManagementSystems.dll
