@@ -9,9 +9,9 @@ class Program
         Console.WriteLine("Library Book Borrowing Tracker\n");
 
         // Prompt user to enter the number of categories (validated input)
-        int categories = InputHelper.GetPositiveInt("Enter the number of categories: ");
+        int categories = ValidateInput.GetPositiveInt("Enter the number of categories: ");
         // Prompt user to enter number of borrow records per category (validated input)
-        int borrow = InputHelper.GetPositiveInt("Enter the number of borrow records per category: ");
+        int borrow = ValidateInput.GetPositiveInt("Enter the number of borrow records per category: ");
         Console.WriteLine(); // Blank line
 
         // Create 2D array to store borrow data
@@ -56,12 +56,12 @@ class Program
 }
 
 // Class for input validation
-public static class InputHelper
+public static class ValidateInput
 {
     // A method that asks the user for input and only returns when they enter a valid positive integer
     public static int GetPositiveInt(string prompt)
     {
-        int result; // variable to hold the converted integer
+        int result; // Variable to hold the converted integer
 
         // Loop to continue prompting until user enters valid input
         while (true)
