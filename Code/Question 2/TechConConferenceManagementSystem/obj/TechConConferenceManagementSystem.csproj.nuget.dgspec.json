@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\AttendeeManagementSystems\\AttendeeManagementSystems.csproj": {}
+    "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\TechConConferenceManagementSystem\\TechConConferenceManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\AttendeeManagementSystems\\AttendeeManagementSystems.csproj": {
+    "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\TechConConferenceManagementSystem\\TechConConferenceManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\AttendeeManagementSystems\\AttendeeManagementSystems.csproj",
-        "projectName": "AttendeeManagementSystems",
-        "projectPath": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\AttendeeManagementSystems\\AttendeeManagementSystems.csproj",
+        "projectUniqueName": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\TechConConferenceManagementSystem\\TechConConferenceManagementSystem.csproj",
+        "projectName": "TechConConferenceManagementSystem",
+        "projectPath": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\TechConConferenceManagementSystem\\TechConConferenceManagementSystem.csproj",
         "packagesPath": "C:\\Users\\marin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\AttendeeManagementSystems\\obj\\",
+        "outputPath": "C:\\Users\\marin\\OneDrive - Eduvos\\Year 2\\Block 4\\Object-Oriented Programming in C#\\Project\\ITCPA2-44-Project\\Code\\Question 2\\TechConConferenceManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marin\\AppData\\Roaming\\NuGet\\NuGet.Config"
