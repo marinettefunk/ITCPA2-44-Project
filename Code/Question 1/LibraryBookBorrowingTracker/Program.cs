@@ -143,7 +143,7 @@ class Program
         }
 
         // Display borrowing records
-        Console.WriteLine("Borrowing Data");
+        Console.WriteLine("\nBorrowing Data");
         for (int i = 0; i < category; i++)
         {
             Console.Write($"Category {i + 1}: ");
@@ -156,23 +156,5 @@ class Program
         }
         // Borrowing analysis message
         Console.WriteLine("\nBorrowing analysis completed.");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

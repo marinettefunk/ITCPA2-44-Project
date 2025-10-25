@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechConConferenceManagementSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff33c5cbaa638c13142d415f1cb857f0a697d09a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+099a4494f22acf6960b7472ecfefc6fe6a85b20a")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechConConferenceManagementSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechConConferenceManagementSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

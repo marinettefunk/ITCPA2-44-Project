@@ -58,6 +58,49 @@ public static class ValidateInput
             }
         }
     }
+
+    // Prompt for a hall number that exists, is not full, and display available halls
+    public static int GetAvailableHallNumber(string prompt, int numberOfHalls, ConferenceCenter center)
+    {
+        int hallNumber;
+        while (true)
+        {
+            // Display available halls with free seats
+            Console.Write("Available halls: ");
+            bool anyAvailable = false;
+            for (int i = 0; i < numberOfHalls; i++)
+            {
+                if (!center.IsHallFull(i))
+                {
+                    Console.Write($"{i + 1} ");
+                    anyAvailable = true;
+                }
+            }
+            if (!anyAvailable)
+            {
+                Console.WriteLine("\nAll halls are full. Cannot add more attendees.");
+                return -1; // Signal that no hall is available
+            }
+            Console.WriteLine();
+
+            hallNumber = GetPositiveInt(prompt);
+            if (hallNumber >= 1 && hallNumber <= numberOfHalls)
+            {
+                if (!center.IsHallFull(hallNumber - 1))
+                {
+                    return hallNumber;
+                }
+                else
+                {
+                    Console.WriteLine($"Hall {hallNumber} is full. Please choose a different hall.");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Invalid hall number. Please enter a number between 1 and {numberOfHalls}.");
+            }
+        }
+    }
 }
 
 class Attendee
@@ -86,7 +129,7 @@ class AttendeeManager
 {
     public static Attendee AddAttendee()
     {
-        Console.WriteLine("\n--- Add New Attendee ---");
+        Console.WriteLine("\nADD NEW ATTENDEE");
 
         string name = ValidateInput.GetValidString("Enter attendee's name: ");
         int age = ValidateInput.GetPositiveInt("Enter attendee's age: ");
@@ -137,9 +180,19 @@ class ConferenceCenter
         return false;
     }
 
+    // Check if a hall is full
+    public bool IsHallFull(int hallIndex)
+    {
+        for (int i = 0; i < capacityPerHall; i++)
+        {
+            if (halls[hallIndex, i] == null) return false;
+        }
+        return true;
+    }
+
     public void DisplayAttendees()
     {
-        Console.WriteLine("\n--- Attendee List by Hall ---");
+        Console.WriteLine("\nATTENDEE LIST");
 
         for (int h = 0; h < numberOfHalls; h++)
         {
@@ -184,7 +237,11 @@ class Program
             {
                 case 1:
                     Attendee newAttendee = AttendeeManager.AddAttendee();
-                    int hallIndex = ValidateInput.GetPositiveInt("Enter hall number (1–3): ") - 1; conferenceCenter.AddAttendeeToHall(newAttendee, hallIndex);
+                    int hallIndex = ValidateInput.GetAvailableHallNumber("Enter hall number (1–3): ", 3, conferenceCenter) - 1;
+                    if (hallIndex != -1) // Only add if a hall is available
+                    {
+                        conferenceCenter.AddAttendeeToHall(newAttendee, hallIndex);
+                    }
                     break;
 
                 case 2:
