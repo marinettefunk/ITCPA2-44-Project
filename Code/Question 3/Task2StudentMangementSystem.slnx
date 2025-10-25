@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="Task2StudentMangementSystem/Task2StudentMangementSystem.csproj" />
   <Project Path="Task3StudentMangementSystem/Task3StudentMangementSystem.csproj" />
+  <Project Path="Task4StudentMangementSystem/Task4StudentMangementSystem.csproj" />
+  <Project Path="Task5StudentMangementSystem/Task5StudentMangementSystem.csproj" />
 </Solution>
