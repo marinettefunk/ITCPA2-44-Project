@@ -184,7 +184,8 @@ class Program
             {
                 case 1:
                     Attendee newAttendee = AttendeeManager.AddAttendee();
-                    int hallIndex = ValidateInput.GetPositiveInt("Enter hall number (1–3): ") - 1; conferenceCenter.AddAttendeeToHall(newAttendee, hallIndex);
+                    int hallIndex = ValidateInput.GetPositiveInt("Enter hall number (1–3): ") - 1;
+                    conferenceCenter.AddAttendeeToHall(newAttendee, hallIndex);
                     break;
 
                 case 2:
