@@ -1,184 +1,245 @@
-﻿/* 
+﻿/*
  Student Management System - Task 4
- ---------------------------------
- Features implemented:
- - Stores multiple students in a List<Student>
- - Add a new student
- - Remove a student by ID
- - Display all students
- - Search for a student by ID
- - Uses loops and control statements (switch, foreach)
 */
 
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-class Student
+public class Student
 {
+    // Declare student fields
     public string StudentID;
     public string Name;
     public int[] Grades;
-    public static int StudentCount;
 
-    // Static constructor runs once
-    static Student() => StudentCount = 0;
+    // Static field to track number of students
+    public static int studentCount;
 
-    // Instance constructor with ID validation
-    public Student(string id, string name, int[] grades)
+    // Static constructor
+    static Student()
     {
-        try
-        {
-            if (!Regex.IsMatch(id, @"^S\d{5}$"))
-                throw new Exception("Invalid Student ID! Must be in format: S12345");
-
-            StudentID = id;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            StudentID = "INVALID";
-        }
-
-        Name = name;
-        Grades = grades;
-        StudentCount++;
+        studentCount = 0;
     }
 
-    // Calculate average grade
+    // Instance constructor with validation
+    public Student(string id, string name, int[] grades)
+    {
+        // Validate ID using regex pattern S12345
+        if (!Regex.IsMatch(id, @"^S\d{5}$"))
+        {
+            throw new ArgumentException("Invalid Student ID! Must follow format S12345");
+        }
+
+        StudentID = id;
+        Name = name;
+        Grades = grades;
+        studentCount++;
+    }
+
+    // Method to calculate average grade
     public double CalculateAverage()
     {
-        if (Grades.Length == 0) return 0;
         double total = 0;
-        foreach (int mark in Grades) total += mark;
+        foreach (int grade in Grades)
+        {
+            total += grade;
+        }
         return total / Grades.Length;
     }
 
-    // Display student details
-    public void DisplayStudent()
+    // Method to display student information (single student)
+    public void DisplayStudentInfo()
     {
-        Console.WriteLine($"ID: {StudentID}; Name: {Name}; Grades: {string.Join(", ", Grades)}; Average: {CalculateAverage():F2}");
+        Console.WriteLine($"Student ID: {StudentID}");
+        Console.WriteLine($"Name: {Name}");
+        Console.WriteLine("Grades: " + string.Join(", ", Grades));
+        Console.WriteLine($"Average Grade: {CalculateAverage():F2}");
+        Console.WriteLine();
     }
 }
 
 class Program
 {
-    // Collection to store students
+    // Collection to store multiple students
     static List<Student> students = new List<Student>();
 
     static void Main(string[] args)
     {
-        // Add sample students
-        students.Add(new Student("S10001", "Jane Doe", new int[] { 85, 90, 78 }));
-        students.Add(new Student("S10002", "John Smith", new int[] { 70, 65, 80 }));
+        bool exit = false;
 
-        int choice;
-
-        do
+        // Main menu loop
+        while (!exit)
         {
-            // Menu for user
-            Console.WriteLine("\n===== STUDENT MANAGEMENT MENU =====");
+            Console.WriteLine("STUDENT MANAGEMENT SYSTEM");
             Console.WriteLine("1. Add Student");
             Console.WriteLine("2. Remove Student by ID");
-            Console.WriteLine("3. Search Student by ID");
-            Console.WriteLine("4. Display All Students");
+            Console.WriteLine("3. Display All Students");
+            Console.WriteLine("4. Search Student by ID");
             Console.WriteLine("5. Exit");
-            Console.Write("Enter choice: ");
+            Console.Write("Choose an option: ");
 
-            // Read user input and validate
-            if (!int.TryParse(Console.ReadLine(), out choice))
-            {
-                Console.WriteLine("Invalid input. Enter a number between 1-5.");
-                continue;
-            }
+            string choice = Console.ReadLine() ?? "";  // Null-safe
+            Console.WriteLine();
 
-            // Perform action based on choice
+            // Switch statement to handle menu choices
             switch (choice)
             {
-                case 1:
+                case "1":
                     AddStudent();
                     break;
-                case 2:
+                case "2":
                     RemoveStudent();
                     break;
-                case 3:
-                    SearchStudent();
-                    break;
-                case 4:
+                case "3":
                     DisplayAllStudents();
                     break;
-                case 5:
-                    Console.WriteLine("Exiting program...");
+                case "4":
+                    SearchStudent();
+                    break;
+                case "5":
+                    Console.WriteLine("Exiting program... Goodbye!");
+                    exit = true; // Exit the loop and program
                     break;
                 default:
-                    Console.WriteLine("Invalid choice. Select 1-5.");
+                    Console.WriteLine("Invalid option. Try again.\n");
                     break;
             }
-
-        } while (choice != 5);
+        }
     }
 
-    // Add a new student
+    // Method to add a new student with full input validation
     static void AddStudent()
     {
-        Console.Write("Enter Student ID (S12345): ");
-        string id = Console.ReadLine();
-        Console.Write("Enter Name: ");
-        string name = Console.ReadLine();
-        Console.Write("Enter Grades separated by commas: ");
-        string[] gradesInput = Console.ReadLine().Split(',');
-        List<int> gradeList = new List<int>();
+        string id;
+        string name;
+        int[] grades;
 
-        foreach (string g in gradesInput)
-            if (int.TryParse(g.Trim(), out int grade)) gradeList.Add(grade);
+        // Validate Student ID
+        while (true)
+        {
+            Console.Write("Enter Student ID (S12345): ");
+            id = Console.ReadLine() ?? "";
+            if (Regex.IsMatch(id, @"^S\d{5}$"))
+                break;
+            else
+                Console.WriteLine("Error: Invalid Student ID! Must follow format S12345.");
+        }
 
-        students.Add(new Student(id, name, gradeList.ToArray()));
-        Console.WriteLine("Student added successfully!");
+        // Validate Name (letters and spaces only)
+        while (true)
+        {
+            Console.Write("Enter Name: ");
+            name = Console.ReadLine() ?? ""; 
+            if (Regex.IsMatch(name, @"^[A-Za-z ]+$"))
+                break;
+            else
+                Console.WriteLine("Error: Name must contain only letters and spaces.");
+        }
+
+        // Validate grades (non-negative integers separated by space)
+        while (true)
+        {
+            Console.Write("Enter grades separated by space: ");
+            string inputGrades = Console.ReadLine() ?? "";
+            string[] gradesInput = inputGrades.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            try
+            {
+                grades = Array.ConvertAll(gradesInput, s =>
+                {
+                    if (!int.TryParse(s, out int grade))
+                        throw new FormatException($"Invalid grade: '{s}'. Enter only numbers.");
+                    if (grade < 0)
+                        throw new FormatException($"Invalid grade: '{s}'. Grades cannot be negative.");
+                    return grade;
+                });
+                break; // Exit loop if all grades are valid
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        // Create student and add to collection
+        try
+        {
+            Student newStudent = new Student(id, name, grades);
+            students.Add(newStudent);
+            Console.WriteLine("Student added successfully!\n");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message + "\n");
+        }
     }
 
-    // Remove a student by ID
+    // Method to remove a student by ID
     static void RemoveStudent()
     {
         Console.Write("Enter Student ID to remove: ");
-        string id = Console.ReadLine();
-        Student student = students.Find(s => s.StudentID == id);
+        string id = Console.ReadLine() ?? "";
 
-        if (student != null)
+        Student? studentToRemove = null;
+
+        // Loop through list to find student
+        foreach (Student s in students)
         {
-            students.Remove(student);
-            Console.WriteLine("Student removed successfully.");
+            if (s.StudentID == id)
+            {
+                studentToRemove = s;
+                break; // Exit loop once found
+            }
+        }
+
+        if (studentToRemove != null)
+        {
+            students.Remove(studentToRemove); // Remove from collection
+            Student.studentCount--;
+            Console.WriteLine("Student removed successfully!\n");
         }
         else
         {
-            Console.WriteLine("Student not found.");
+            Console.WriteLine("Student not found.\n");
         }
     }
 
-    // Search a student by ID
+    // Method to display all students with total count at the end
+    static void DisplayAllStudents()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students found.\n");
+            return;
+        }
+
+        // Loop through collection and display each student
+        foreach (Student s in students)
+        {
+            s.DisplayStudentInfo();
+        }
+
+        // Display total students once after listing all
+        Console.WriteLine($"Total Students so far: {Student.studentCount}\n");
+    }
+
+    // Method to search a student by ID
     static void SearchStudent()
     {
         Console.Write("Enter Student ID to search: ");
-        string id = Console.ReadLine();
-        Student student = students.Find(s => s.StudentID == id);
+        string id = Console.ReadLine() ?? ""; // Null-safe
 
-        if (student != null)
-        {
-            Console.WriteLine("\n--- STUDENT FOUND ---");
-            student.DisplayStudent();
-        }
-        else
-        {
-            Console.WriteLine("Student not found.");
-        }
-    }
-
-    // Display all students
-    static void DisplayAllStudents()
-    {
-        Console.WriteLine("\n--- ALL STUDENTS ---");
+        // Loop through collection to find student
         foreach (Student s in students)
         {
-            s.DisplayStudent();
+            if (s.StudentID == id)
+            {
+                s.DisplayStudentInfo();
+                return; // Exit after finding
+            }
         }
+
+        Console.WriteLine("Student not found.\n");
     }
 }

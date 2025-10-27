@@ -1,69 +1,60 @@
-﻿/* 
+﻿/*
  Student Management System - Task 3
- ---------------------------------
- This version includes:
- - Student average grade calculation method
- - Regular Expression for validating Student ID format
- - try-catch block to handle invalid Student ID errors
- - Displays student details and average score
 */
 
 using System;
-using System.Text.RegularExpressions; // Required for Student ID validation
+using System.Text.RegularExpressions;
 
-class Student
+public class Student
 {
-    // Fields that store student details
+    // Declare student fields
     public string StudentID;
     public string Name;
     public int[] Grades;
 
-    // Static field to keep track of total students created
-    public static int StudentCount;
+    // Static field to track number of students
+    public static int studentCount;
 
-    // Static constructor (runs once before any student objects are created)
+    // Static constructor
     static Student()
     {
-        StudentCount = 0;
+        studentCount = 0;
     }
 
-    // Constructor to initialize each student object
+    // Instance constructor with validation
     public Student(string id, string name, int[] grades)
     {
-        try
+        // Validate ID using regex pattern S12345
+        if (!Regex.IsMatch(id, @"^S\d{5}$"))
         {
-            // Check if the ID matches format: S followed by 5 digits, e.g. S12345
-            if (!Regex.IsMatch(id, @"^S\d{5}$"))
-            {
-                throw new Exception("Invalid Student ID! Must be in format: S12345");
-            }
-
-            StudentID = id; // If valid, set ID
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message); // Display error message
-            StudentID = "INVALID"; // Assign default value if invalid
+            throw new ArgumentException("Invalid Student ID! Must follow format: S12345");
         }
 
-        Name = name;   // Set student name
-        Grades = grades; // Set grade list
-
-        StudentCount++; // Count the new student object
+        StudentID = id;
+        Name = name;
+        Grades = grades;
+        studentCount++;
     }
 
     // Method to calculate average grade
     public double CalculateAverage()
     {
         double total = 0;
-
-        // Add all grades together
-        foreach (int mark in Grades)
+        foreach (int grade in Grades)
         {
-            total += mark;
+            total += grade;
         }
+        return total / Grades.Length;
+    }
 
-        return total / Grades.Length; // Return average score
+    // Method to display student information
+    public void DisplayStudentInfo()
+    {
+        Console.WriteLine($"Student ID: {StudentID}");
+        Console.WriteLine($"Name: {Name}");
+        Console.WriteLine("Grades: " + string.Join(", ", Grades));
+        Console.WriteLine($"Average Grade: {CalculateAverage():F2}");
+        Console.WriteLine();
     }
 }
 
@@ -71,16 +62,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create two student objects
-        Student student1 = new Student("S10001", "Jane Doe", new int[] { 85, 90, 78 });
-        Student student2 = new Student("SABCDE", "John Doe", new int[] { 70, 65, 80 }); // Invalid ID (for testing)
+        Console.WriteLine("STUDENT INFORMATION\n");
 
-        // Display student information + average marks
-        Console.WriteLine("\nSTUDENT DETAILS");
-        Console.WriteLine($"ID: {student1.StudentID}; Name: {student1.Name}; Grades: {string.Join(", ", student1.Grades)}; Average: {student1.CalculateAverage():F2}");
-        Console.WriteLine($"ID: {student2.StudentID}; Name: {student2.Name}, Grades: {string.Join(", ", student2.Grades)}; Average: {student2.CalculateAverage():F2}");
+        try
+        {
+            Student student1 = new Student("S12345", "John Doe", new int[] { 85, 90, 82 });
+            student1.DisplayStudentInfo();
 
-        // Show total number of student objects created
-        Console.WriteLine($"\nTotal Students: {Student.StudentCount}");
+            // Intentionally incorrect ID to test validation and error handling
+            Student student2 = new Student("12345", "Jane Doe", new int[] { 78, 88, 91 });
+            student2.DisplayStudentInfo();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+
+        Console.WriteLine($"Total Students: {Student.studentCount}");
     }
 }

@@ -1,57 +1,59 @@
-﻿/* 
+﻿/*
  Student Management System - Task 2
- ---------------------------------
- This task includes:
- - A Student class with fields for Student ID, Name, and Grades.
- - A static constructor that tracks how many Student objects are created.
- - An instance constructor to initialize student data.
- - Creation of at least two Student objects in the Main method.
- - Output to display student information and total number of students.
 */
 
 using System;
 
-class Student
+public class Student
+{
+    // Declare student fields
+    public string StudentID;
+    public string Name;
+    public int[] Grades;
+
+    // Static field to track number of students
+    public static int studentCount;
+
+    // Static constructor
+    static Student()
     {
-        public string StudentID;
-        public string Name;
-        public int[] Grades;
-
-        // Static field to track number of students
-        public static int StudentCount;
-
-        // Static constructor (runs once)
-        static Student()
-        {
-            StudentCount = 0;
-        }
-
-        // Instance constructor to initialize fields
-        public Student(string id, string name, int[] grades)
-        {
-            StudentID = id;
-            Name = name;
-            Grades = grades;
-
-            StudentCount++; // Track number of created students
-        }
+        studentCount = 0;
     }
 
-class Program
+    // Instance constructor
+    public Student(string id, string name, int[] grades)
     {
-        static void Main(string[] args)
-        {
-            // Create 2 student objects
-            Student student1 = new Student("S10001", "Jane Doe", new int[] { 85, 90, 78 });
-            Student student2 = new Student("S10002", "John Doe", new int[] { 70, 65, 80 });
-
-            // Print the student details
-            Console.WriteLine("\nSTUDENT DETAILS");
-            Console.WriteLine($"ID: {student1.StudentID}, Name: {student1.Name}, Grades: {string.Join(", ", student1.Grades)}");
-            Console.WriteLine($"ID: {student2.StudentID}, Name: {student2.Name}, Grades: {string.Join(", ", student2.Grades)}");
-
-            // Display total students
-            Console.WriteLine("\nStudents created successfully!");
-            Console.WriteLine($"Total number of students: {Student.StudentCount}");
-        }
+        StudentID = id;
+        Name = name;
+        Grades = grades;
+        studentCount++;
     }
+
+    // Method to display student information
+    public void DisplayStudentInfo()
+    {
+        Console.WriteLine($"Student ID: {StudentID}");
+        Console.WriteLine($"Name: {Name}");
+        Console.WriteLine("Grades: " + string.Join(", ", Grades));
+        Console.WriteLine();
+    }
+
+}
+
+class Program()
+{
+    static void Main(string[] args)
+    {
+        // Create two Student objects
+        Student student1 = new Student("S001", "John Doe", new int[] { 85, 90, 82 });
+        Student student2 = new Student("S002", "Jane Doe", new int[] { 78, 88, 91 });
+
+        // Display info
+        Console.WriteLine("STUDENT INFORMATION\n");
+        student1.DisplayStudentInfo();
+        student2.DisplayStudentInfo();
+
+        // Show number of students created
+        Console.WriteLine($"Total Students: {Student.studentCount}");
+    }
+}

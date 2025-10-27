@@ -103,7 +103,7 @@ public static class ValidateInput
     }
 }
 
-class Attendee
+public class Attendee
 {
     // Properties for attendee details
     public string Name;
@@ -145,7 +145,7 @@ class AttendeeManager
     }
 }
 
-class ConferenceCenter
+public class ConferenceCenter
 {
     private Attendee[,] halls;
     private int numberOfHalls;
@@ -220,13 +220,13 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("TECHCON GLOBAL ATTENDEE MANAGEMENT SYSTEM\n");
+        Console.WriteLine("TECHCON GLOBAL ATTENDEE MANAGEMENT SYSTEM");
 
         ConferenceCenter conferenceCenter = new ConferenceCenter(3, 4); // 3 halls, 4 seats each
 
         while (true)
         {
-            Console.WriteLine("Menu:");
+            Console.WriteLine("\nMenu:");
             Console.WriteLine("1. Add an Attendee");
             Console.WriteLine("2. Display Attendees");
             Console.WriteLine("3. Exit");
