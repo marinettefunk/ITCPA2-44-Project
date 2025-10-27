@@ -1,5 +1,5 @@
 ﻿/*
- Student Management System - Task 4
+ Student Management System - Task 5 (Updated from Task 4)
 */
 
 using System;
@@ -37,9 +37,16 @@ public class Student
         studentCount++;
     }
 
+    // Destructor
+    ~Student()
+    {
+        Console.WriteLine($"Student object {StudentID} is being destroyed.");
+    }
+
     // Method to calculate average grade
     public double CalculateAverage()
     {
+        if (Grades.Length == 0) return 0;
         double total = 0;
         foreach (int grade in Grades)
         {
@@ -48,14 +55,11 @@ public class Student
         return total / Grades.Length;
     }
 
-    // Method to display student information (single student)
-    public void DisplayStudentInfo()
+    // Method to display student information (single student) in formatted table
+    public void DisplayStudentInfoFormatted()
     {
-        Console.WriteLine($"Student ID: {StudentID}");
-        Console.WriteLine($"Name: {Name}");
-        Console.WriteLine("Grades: " + string.Join(", ", Grades));
-        Console.WriteLine($"Average Grade: {CalculateAverage():F2}");
-        Console.WriteLine();
+        string gradesStr = Grades.Length > 0 ? string.Join(", ", Grades) : "None";
+        Console.WriteLine("{0,-10} {1,-20} {2,-20} {3,10:F2}", StudentID, Name, gradesStr, CalculateAverage());
     }
 }
 
@@ -140,8 +144,14 @@ class Program
         // Validate grades (non-negative integers separated by space)
         while (true)
         {
-            Console.Write("Enter grades separated by space: ");
+            Console.Write("Enter grades separated by space (or leave blank for none): ");
             string inputGrades = Console.ReadLine() ?? "";
+            if (string.IsNullOrWhiteSpace(inputGrades))
+            {
+                grades = new int[0]; // No grades
+                break;
+            }
+
             string[] gradesInput = inputGrades.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             try
@@ -169,9 +179,13 @@ class Program
             students.Add(newStudent);
             Console.WriteLine("Student added successfully!\n");
         }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine("Validation Error: " + ex.Message + "\n");
+        }
         catch (Exception ex)
         {
-            Console.WriteLine("Error: " + ex.Message + "\n");
+            Console.WriteLine("Unexpected Error: " + ex.Message + "\n");
         }
     }
 
@@ -181,17 +195,7 @@ class Program
         Console.Write("Enter Student ID to remove: ");
         string id = Console.ReadLine() ?? "";
 
-        Student? studentToRemove = null;
-
-        // Loop through list to find student
-        foreach (Student s in students)
-        {
-            if (s.StudentID == id)
-            {
-                studentToRemove = s;
-                break; // Exit loop once found
-            }
-        }
+        Student? studentToRemove = students.Find(s => s.StudentID == id);
 
         if (studentToRemove != null)
         {
@@ -214,14 +218,18 @@ class Program
             return;
         }
 
+        // Display header
+        Console.WriteLine("{0,-10} {1,-20} {2,-20} {3,10}", "StudentID", "Name", "Grades", "Average");
+        Console.WriteLine(new string('-', 70));
+
         // Loop through collection and display each student
         foreach (Student s in students)
         {
-            s.DisplayStudentInfo();
+            s.DisplayStudentInfoFormatted();
         }
 
         // Display total students once after listing all
-        Console.WriteLine($"Total Students so far: {Student.studentCount}\n");
+        Console.WriteLine($"\nTotal Students so far: {Student.studentCount}\n");
     }
 
     // Method to search a student by ID
@@ -230,16 +238,18 @@ class Program
         Console.Write("Enter Student ID to search: ");
         string id = Console.ReadLine() ?? ""; // Null-safe
 
-        // Loop through collection to find student
-        foreach (Student s in students)
-        {
-            if (s.StudentID == id)
-            {
-                s.DisplayStudentInfo();
-                return; // Exit after finding
-            }
-        }
+        Student? student = students.Find(s => s.StudentID == id);
 
-        Console.WriteLine("Student not found.\n");
+        if (student != null)
+        {
+            // Display header
+            Console.WriteLine("{0,-10} {1,-20} {2,-20} {3,10}", "StudentID", "Name", "Grades", "Average");
+            Console.WriteLine(new string('-', 70));
+            student.DisplayStudentInfoFormatted();
+        }
+        else
+        {
+            Console.WriteLine("Student not found.\n");
+        }
     }
 }
